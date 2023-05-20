@@ -23,17 +23,23 @@ async def rename_start(client, message):
 
     try:
         await message.reply_text(
-            text=f"**__Pʟᴇᴀꜱᴇ Eɴᴛᴇʀ Nᴇᴡ Fɪʟᴇɴᴀᴍᴇ...__**\n\n**Oʟᴅ Fɪʟᴇ Nᴀᴍᴇ** :- `{filename}`",
-	    reply_to_message_id=message.id,  
-	    reply_markup=ForceReply(True)
-        )       
-        await sleep(30)
+            text=f"**__Please Enter New Filename...__**\n\n**Old Filename**: `{filename}`",
+            reply_to_message_id=message.id,
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("✏️ Rename", callback_data="rename_file")],
+                [InlineKeyboardButton("❌ Cancel", callback_data="rename_cancel")]
+            ])
+        )
+
     except FloodWait as e:
         await sleep(e.value)
         await message.reply_text(
-            text=f"**__Pʟᴇᴀꜱᴇ Eɴᴛᴇʀ Nᴇᴡ Fɪʟᴇɴᴀᴍᴇ...__**\n\n**Oʟᴅ Fɪʟᴇ Nᴀᴍᴇ** :- `{filename}`",
-	    reply_to_message_id=message.id,  
-	    reply_markup=ForceReply(True)
+            text=f"**File Name :-**\n`{filename}`",
+            reply_to_message_id=message.id,
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("✏️ Rename", callback_data="rename_file")],
+                [InlineKeyboardButton("❌ Cancel", callback_data="rename_cancel")]
+            ])
         )
     except:
         pass
@@ -69,6 +75,20 @@ async def refunc(client, message):
         )
 
 
+@Client.on_callback_query(filters.regex('rename_file'))
+async def renamefunc(client, query: CallbackQuery):
+    await query.answer()  # Acknowledge the callback query
+    reply_markup = ForceReply(True)
+    await client.send_message(
+        chat_id=query.message.chat.id,
+        text="𝙿𝚕𝚎𝚊𝚜𝚎 𝙴𝚗𝚝𝚎𝚛 𝙽𝚎𝚠 𝙵𝚒𝚕𝚎𝙽𝚊𝚖𝚎...  ",
+        reply_markup=reply_markup,
+        reply_to_message_id=query.message.reply_to_message.id
+    )
+
+@Client.on_callback_query(filters.regex('rename_cancel'))
+async def cancel_rename(client, query: CallbackQuery):
+    await query.message.delete()
 
 @Client.on_callback_query(filters.regex("upload"))
 async def doc(bot, update):    
