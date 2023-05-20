@@ -85,6 +85,7 @@ async def renamefunc(client, query: CallbackQuery):
         reply_markup=reply_markup,
         reply_to_message_id=query.message.reply_to_message.id
     )
+    await query.message.delete()
 
 @Client.on_callback_query(filters.regex('rename_cancel'))
 async def cancel_rename(client, query: CallbackQuery):
