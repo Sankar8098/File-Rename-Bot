@@ -26,9 +26,11 @@ id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
     # pyro client config
-    API_ID    = os.environ.get("API_ID", "21288218")
-    API_HASH  = os.environ.get("API_HASH", "dd47d5c4fbc31534aa764ef9918b3acd")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6067754375:AAGVGSGTqaiJ2vziLKcbr43tnyY54rc3p3g") 
+    API_ID    = os.environ.get("API_ID", "23990433")
+    API_HASH  = os.environ.get("API_HASH", "e6c4b6ee1933711bc4da9d7d17e1eb20")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "5964494060:AAFfOEerT8lR8YqyEHJQtbFQidqkqkYUaO8
+
+") 
    
     # database config
     DB_NAME = os.environ.get("DB_NAME","User_Data")     
@@ -37,8 +39,8 @@ class Config(object):
     # other configs
     BOT_UPTIME  = time.time()
     START_PIC   = os.environ.get("START_PIC", "https://graph.org/file/96b95655116323fd55138.jpg")
-    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '6065594762').split()]
-    FORCE_SUB   = os.environ.get("FORCE_SUB", "Kdramaland_Official") 
+    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '5821871362').split()]
+    FORCE_SUB   = os.environ.get("FORCE_SUB", "SK_MoviesOffl) 
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", False))
 
     # wes response configuration     
@@ -77,7 +79,7 @@ Exᴀᴍᴩʟᴇ:- /set_caption 📕 Fɪʟᴇ Nᴀᴍᴇ: {filename}
 ⏰ Dᴜʀᴀᴛɪᴏɴ: {duration}
 ✏️ <b><u>Hᴏᴡ Tᴏ Rᴇɴᴀᴍᴇ A Fɪʟᴇ</u></b>
 <b>•></b> Sᴇɴᴅ Aɴy Fɪʟᴇ Aɴᴅ Tyᴩᴇ Nᴇᴡ Fɪʟᴇ Nɴᴀᴍᴇ \nAɴᴅ Aᴇʟᴇᴄᴛ Tʜᴇ Fᴏʀᴍᴀᴛ [ document, video, audio ].           
-ℹ️ 𝗔𝗻𝘆 𝗢𝘁𝗵𝗲𝗿 𝗛𝗲𝗹𝗽 𝗖𝗼𝗻𝘁𝗮𝗰𝘁 :- <a href=https://t.me/Kdramaland_Official>𝑺𝑼𝑷𝑷𝑶𝑹𝑻 𝑮𝑹𝑶𝑼𝑷</a>
+ℹ️ 𝗔𝗻𝘆 𝗢𝘁𝗵𝗲𝗿 𝗛𝗲𝗹𝗽 𝗖𝗼𝗻𝘁𝗮𝗰𝘁 :- <a href=https://t.me/SKmovie_Official>𝑺𝑼𝑷𝑷𝑶𝑹𝑻 𝑮𝑹𝑶𝑼𝑷</a>
 """
 
     PROGRESS_BAR = """<b>\n
